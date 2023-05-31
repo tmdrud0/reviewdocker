@@ -1,10 +1,7 @@
 from flask import Flask, jsonify
+import pika
 
 app = Flask(__name__)
-
-@app.route('/api/test')
-def hello():
-    return 'Hello Flask World'
 
 @app.route('/product')
 def product():
@@ -20,6 +17,11 @@ def product():
 def test():
     return 'hello test'
 
-    
+@app.route('/')
+def home():
+    return 'hello test'   
+
 if __name__ == '__main__':
     app.run()
+    
+    
